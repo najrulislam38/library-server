@@ -1,17 +1,18 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
+// import routes
 const userRoutes = require("./routes/userRoutes");
 const bookRoutes = require("./routes/bookRoutes");
 const loanRoutes = require("./routes/loanRoutes");
 
 const app = express();
-const dotenv = require("dotenv");
 dotenv.config();
 
 // connect to MongoDB
 mongoose
-  .connect(process.env.MONGODB_URL)
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((error) => console.log("Failed to connect...", error));
 

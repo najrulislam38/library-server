@@ -77,11 +77,10 @@ const returnBook = async (req, res) => {
       data: loan,
     });
   } catch (error) {
-    res.status(500),
-      send({
-        success: false,
-        message: "Could not return book",
-      });
+    res.status(500).send({
+      success: false,
+      message: "Could not return book",
+    });
   }
 };
 
