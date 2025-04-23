@@ -23,6 +23,7 @@ const registerUser = async (req, res) => {
         email: newUser.email,
       },
     });
+    await newUser.save();
   } catch (error) {
     res.status(500).send({
       success: false,
